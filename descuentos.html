@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" media="screen and (min-width: 800px)" href="../css/descuentoDesktop.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/descuento.css">
+    <title>Descuento de precios</title>
+</head>
+<body>
+
+    <header class="header">
+        <div id="sidebar" class="header__side-bar">
+            <div class="side-bar__toggle-btn">
+                <span class="side-bar__toggle-btn--span">&#9776</span>
+            </div>
+            <ul class="side-bar_listas">
+                <li class="listas_li"><a href="../index.html"><img src="../sources/img/icon--math-min.png" alt="" class="listas_li--img"></a></li>
+                <li class="listas_li"><a class="listas__li--a" href="../index.html">Main page</a>
+                </li>
+                <li class="listas_li"><a class="listas__li--a" href="../index.html">Discount Calculator</a>
+                </li>
+            </ul>
+        </div>
+        <div class="header__container--logo">
+            <img class="header--img" src="../sources/img/mat--icon-min.png" alt="">
+            <h1 class="header--h1">
+                Discount <br> Calculator
+            </h1>
+        </div>
+    </header>
+
+    <main class="main">
+        <h1 class="main_title">
+            𝑪𝒂𝒍𝒄𝒖𝒍𝒂 𝒄𝒖𝒂𝒍 𝒆𝒔 𝒆𝒍 𝒑𝒓𝒆𝒄𝒊𝒐 𝒔𝒊 𝒂𝒑𝒍𝒊𝒄𝒂𝒏 𝒖𝒏 𝒅𝒆𝒔𝒄𝒖𝒆𝒏𝒕𝒐
+        </h1>
+        <div class="main__questions">
+            <label for="input-precio" class="question__label">
+                ¿Cúal es el precio del producto normal?
+            </label>
+            <input type="number" id="input-precio" placeholder="200.000">
+        </div>
+        <div class="main__questions">
+            <label for="input-descuento" class="question__label">
+                ¿Cúal es el porcentaje de descuento en %?
+            </label>
+            <input type="number" id="input-descuento" placeholder="15%" >
+        </div>
+        <div class="main_cupon">
+            <label for="">
+                ¿Tienes algun cupon?
+            </label>
+            <input type="text" placeholder="2021, 2022, 2023" id="input-cupon">
+        </div>
+        <button class="main_button" type="button" onclick="calcularDescuento()">Calcula tu porcentaje de descuento</button>
+        <input type="text" id="input-resultado" readonly>
+    </main>
+
+    <script>
+        const calculateDiscount = (price, discount) => (price * (100 - discount)) / 100;
+
+            let cupones = [
+                {
+                    name: "2021",
+                    descuento: 15,
+                },
+                {
+                    name: "2022",
+                    descuento: 30,
+                },
+                {
+                    name: "2023",
+                    descuento: 25,
+                },
+                {
+                    name: "",
+                    descuento: 0,
+                },
+            ];
+
+            function calcularDescuento() {
+                let input__precio = document.getElementById("input-precio");
+                let precio = input__precio.value;
+
+                let input__discount = document.getElementById("input-descuento");
+                let discount = input__discount.value;
+                let numberdiscount = parseInt(discount);
+
+                const inputcupon = document.getElementById("input-cupon");
+                const cuponValue = inputcupon.value;
+
+                // Con el valor escrito compara si hay uno igual en los names del objeto y si es el caso lo retorna con el nombre que concide
+                const validacionCupon = cupon => cupon.name === cuponValue;
+                // Busca dentro de mis objetos donde esta ese nombre que tenemos en validación y nos dara el objeto
+                const usercupon = cupones.find(validacionCupon);
+
+                if (!usercupon) { // Valida que si usercupon no tine no es verdad osea que no tiene un valor encontrado pues manda el alerta
+                    alert("Este no es un cupon valido")
+                } else { // Si si tiene un valor verdader ya que concide hace esto
+                    const descuento = usercupon.descuento; // Busca en el objeto que ya tiene este el valor de descuento porque recordemos que la varaible tiene el valor del objeto que concide con 2021 no tinen a 2021
+                    const finaldiscount = descuento + numberdiscount;
+                    let resultado = calculateDiscount(precio, finaldiscount);
+                    if (isNaN(resultado)) {
+                        resultado = 0
+                    }
+                    document.getElementById("input-resultado").value = `tu resultado es ${resultado} 💲`;
+                }
+            }
+
+    </script>
+    <script src="../js/side_bar.js"></script>
+</body>
+</html>

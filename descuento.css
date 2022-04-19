@@ -1,0 +1,75 @@
+.main_title {
+    font-size: 2rem;
+    margin: 2rem 0rem;
+    text-align: center;
+    width: 70vw;
+    text-decoration: underline;
+}
+.main__questions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: none;
+}
+.question__label {
+    font-size: 1.8rem;
+}
+
+.main__questions input {
+    margin: 1rem;
+    width: 70vw;
+    height: 3rem;
+    border: none;
+    /* border-radius: 5rem; */
+    padding: 1rem;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.281);
+}
+.main_cupon {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0rem;
+    align-items: center;
+}
+.main_cupon label{
+    font-size: 1.6rem;
+    margin: 0rem 1rem;
+}
+.main_cupon input {
+    width: 30vw;
+    height: 3rem;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.11);
+} ::placeholder {
+    color: rgba(255, 255, 255, 0.616);
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main_button {
+    width: 20rem;
+    border: none;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.452);
+    border: solid 0.1rem rgba(0, 0, 0, 0.644);
+    margin-bottom: 1rem;
+}
+#input-resultado {
+    height: 3.5rem;
+    text-align: center;
+    border: none;
+    margin: 1rem 0rem;
+    outline: none;
+    width: 50vw;
+    background-color: rgba(255, 255, 255, 0.281);
+}
+input {
+    text-align: center;
+}

@@ -1,0 +1,35 @@
+.main .main_title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+.main__questions .question__label {
+    font-size: 2.5rem;
+    margin: 2.5rem 0rem;
+}
+.main__questions input {
+    height: 4rem !important ;
+    font-size: 2rem;
+    border-radius: 1rem;
+    width: 60rem !important;
+} ::placeholder {
+    font-size: 2rem;
+}
+.main_cupon {
+    margin: 3rem 0 !important;
+}
+.main_cupon label {
+    font-size: 2rem !important;
+}
+.main_cupon input {
+    height: 4rem !important;
+}
+.main_button {
+    width: 30rem !important;
+    height: 5rem;
+    font-size: 1.8rem;
+    border-radius: 0.8rem;
+}
+main #input-resultado {
+    height: 5rem;
+    font-size: 2rem;
+}
